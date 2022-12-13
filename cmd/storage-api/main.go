@@ -21,11 +21,16 @@ func GetPromotionById(c *gin.Context) {
 	}
 	c.IndentedJSON(http.StatusOK, promotion)
 }
+func LoadPromotions(c *gin.Context) {
+	store.LoadFromCsv()
+	c.IndentedJSON(http.StatusOK, gin.H{"status": "ok"})
+}
 
 func main() {
 	router := gin.Default()
 	router.GET("/promotions", getPromotions)
 	router.GET("/promotions/:id", GetPromotionById)
+	router.GET("/admin/load", LoadPromotions)
 
 	router.Run("localhost:8080")
 }
