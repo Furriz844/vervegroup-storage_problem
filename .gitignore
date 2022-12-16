@@ -1,3 +1,4 @@
 /resources/
 /out/
 .DS_Store
+/database/

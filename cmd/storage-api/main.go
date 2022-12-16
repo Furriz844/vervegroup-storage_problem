@@ -22,9 +22,9 @@ var service promotion.PromotionService
 // todo to settings file
 const (
 	HOST     = "localhost"
-	PORT     = 55000
-	USER     = "postgres"
-	PASSWORD = "postgrespw"
+	PORT     = 5432
+	USER     = "storage"
+	PASSWORD = "storage_pwd"
 	DBNAME   = "storage_api"
 	FILE     = "./resources/promotions.csv"
 )

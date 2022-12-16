@@ -33,7 +33,7 @@ func (r PromotionRepository) getPromotionById(id string) (*entity.Promotion, err
 
 func (r PromotionRepository) savePromotion(p entity.Promotion) (entity.Promotion, error) {
 
-	if _, err := r.db.Exec("INSERT INTO promotions (id, price, time) VALUES ($1, $2, $3)", p.ID, p.Price, p.ExpirationDate); err != nil {
+	if _, err := r.db.Exec("INSERT INTO promotions (id, price, expiration_date) VALUES ($1, $2, $3)", p.ID, p.Price, p.ExpirationDate); err != nil {
 		log.Print("Can't save promotion with id:", p.ID, ". Reason: ", err)
 		return p, err
 	}
