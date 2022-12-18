@@ -62,7 +62,7 @@ func (s PromotionService) LoadFromCsv(filepath string) error {
 		}
 		promTime, err := time.Parse(layout, record[2])
 		if err != nil {
-			log.Print("Can't parse record with id=", record[0], "Can't parse ID:", err)
+			log.Print("Can't parse record with id=", record[0], "Can't parse expirationDate:", err)
 		}
 		p := entity.Promotion{ID: id, Price: price, ExpirationDate: promTime}
 		if _, err := s.repo.savePromotion(p); err != nil {
