@@ -23,7 +23,7 @@ make
 ```
 curl -v http://localhost:8080/admin/load
 ```
-- Get promotion using /promotions/uuid endpoint
+- Get promotion using `/promotions/{uuid}` endpoint
 ```
 curl -v http://localhost:8080/promotions/8aaa4862-c976-42a0-839e-43533837eb2c
 ```
